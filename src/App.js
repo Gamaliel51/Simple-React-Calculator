@@ -6,14 +6,16 @@ export default function App() {
   let [screenVal, setVal] = useState("")
   let last = ""
   
-  const display = (e, str=false) => {
-    if(str === true){
-      str = screenVal
+  const display = (e) => {
+    if(e === "="){
+      let str = screenVal
+      str = str.replaceAll("×", "*")
+      str = str.replaceAll("÷", "/")
       str = str.replaceAll("ln(", "log(")
       str = str.replaceAll("√(", "sqrt(")
-      screenVal = evaluate(str)
+      str = evaluate(str)
       last = "="
-      setVal(screenVal)
+      setVal(str)
     }
     else if(e === "CE"){
       setVal("")
@@ -44,10 +46,10 @@ export default function App() {
       </tr>
       <Button vals={["ln", "", "C", "CE"]} func={display} funct={clearScreen}/>
       <Button vals={["√", "^", "(", ")"]} func={display}/>
-      <Button vals={["1", "2", "3", "/"]} func={display}/>
+      <Button vals={["1", "2", "3", "+"]} func={display}/>
       <Button vals={["4", "5", "6", "-"]} func={display}/>
-      <Button vals={["7", "8", "9", "+"]} func={display}/>
-      <Button vals={[".", "0", "*", "="]} func={display}/>
+      <Button vals={["7", "8", "9", "÷"]} func={display}/>
+      <Button vals={[".", "0", "×", "="]} func={display}/>
     </table>
 </div>
   );
