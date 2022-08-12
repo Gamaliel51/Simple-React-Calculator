@@ -9,6 +9,8 @@ export default function App() {
   const display = (e, str=false) => {
     if(str === true){
       str = screenVal
+      str = str.replaceAll("ln(", "log(")
+      str = str.replaceAll("√(", "sqrt(")
       screenVal = evaluate(str)
       last = "="
       setVal(screenVal)
@@ -40,7 +42,7 @@ export default function App() {
         <td colSpan="4"> <input className="display-box" type="text" id="result" value={screenVal}/></td>
     
       </tr>
-      <Button vals={["log", "", "C", "CE"]} func={display} funct={clearScreen}/>
+      <Button vals={["ln", "", "C", "CE"]} func={display} funct={clearScreen}/>
       <Button vals={["√", "^", "(", ")"]} func={display}/>
       <Button vals={["1", "2", "3", "/"]} func={display}/>
       <Button vals={["4", "5", "6", "-"]} func={display}/>
