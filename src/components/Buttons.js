@@ -5,13 +5,19 @@ export default function Button(props){
         {
             items.map((m, index) => {
                 if(m === "="){
-                    return <td><input type="button" value={m} onClick={(e) => props.func(m, true)} style={{backgroundColor: "green"}}/></td>
+                    return <td><input type="button" value={m} onClick={(e) => props.func(m)} style={{backgroundColor: "green"}}/></td>
                 }
                 else if(m === "√"){
                     return <td><input type="button" value={m} onClick={(e) => props.func("√(")}/></td>
                 }
                 else if(m === "ln"){
-                    return <td><input type="button" value={m} onClick={(e) => props.func("ln(")} style={{fontSize: "10px"}}/></td>
+                    return <td><input type="button" value={m} onClick={(e) => props.func("ln(")} style={{fontSize: "13px"}}/></td>
+                }
+                else if(m === "×"){
+                    return <td><input type="button" value={m} onClick={(e) => props.func(m)} style={{fontSize: "17px"}}/></td>
+                }
+                else if(m === "+"){
+                    return <td><input type="button" value={m} onClick={(e) => props.func(m)} style={{fontSize: "15px"}}/></td>
                 }
                 else if(m === "C"){
                     return <td><input type="button" value={m} onClick={(e) => props.funct()} style={{backgroundColor: "#fb0066"}}/></td>
