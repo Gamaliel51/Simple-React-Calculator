@@ -4,8 +4,7 @@ import {evaluate} from 'mathjs';
 
 export default function App() {
   let [screenVal, setVal] = useState("")
-  let last = ""
-  
+
   const display = (e) => {
     if(e === "="){
       let str = screenVal
@@ -14,7 +13,6 @@ export default function App() {
       str = str.replaceAll("ln(", "log(")
       str = str.replaceAll("√(", "sqrt(")
       str = evaluate(str)
-      last = "="
       setVal(str)
     }
     else if(e === "CE"){
@@ -26,14 +24,8 @@ export default function App() {
   }
 
   const clearScreen = () => {
-    if(last === "="){
-      last = ""
-      setVal("")
-    }
-    else{
-      let a = screenVal.length - 1
-      setVal(screenVal.slice(0,a))
-    }
+    let a = screenVal.length - 1
+    setVal(screenVal.slice(0,a))
   }
 
   
