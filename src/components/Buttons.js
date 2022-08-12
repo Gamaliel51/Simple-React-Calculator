@@ -8,10 +8,10 @@ export default function Button(props){
                     return <td><input type="button" value={m} onClick={(e) => props.func(m, true)} style={{backgroundColor: "green"}}/></td>
                 }
                 else if(m === "√"){
-                    return <td><input type="button" value={m} onClick={(e) => props.func("sqrt(")}/></td>
+                    return <td><input type="button" value={m} onClick={(e) => props.func("√(")}/></td>
                 }
-                else if(m === "log"){
-                    return <td><input type="button" value={m} onClick={(e) => props.func("log(")} style={{fontSize: "9px"}}/></td>
+                else if(m === "ln"){
+                    return <td><input type="button" value={m} onClick={(e) => props.func("ln(")} style={{fontSize: "10px"}}/></td>
                 }
                 else if(m === "C"){
                     return <td><input type="button" value={m} onClick={(e) => props.funct()} style={{backgroundColor: "#fb0066"}}/></td>
