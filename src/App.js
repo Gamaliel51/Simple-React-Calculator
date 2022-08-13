@@ -12,7 +12,7 @@ export default function App() {
       str = str.replaceAll("÷", "/")
       str = str.replaceAll("ln(", "log(")
       str = str.replaceAll("√(", "sqrt(")
-      str = evaluate(str)
+      str = evaluate(str).toString()
       setVal(str)
     }
     else if(e === "CE"){
